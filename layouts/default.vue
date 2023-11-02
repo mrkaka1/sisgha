@@ -1,13 +1,14 @@
 <script setup>
-import IconKeyDown from '~/components/Icons/IconKeyDown.vue';
-import IconLinks from '~/components/Icons/IconLinks.vue';
-import IconCalendar from '~/components/Icons/IconCalendar.vue';
-import IconProfile from '~/components/Icons/IconProfile.vue';
-import IconSubjects from '~/components/Icons/IconSubjects.vue';
-import IconTurmas from '~/components/Icons/IconTurmas.vue';
-import IconPerson from '~/components/Icons/IconPerson.vue';
-import IconHome from '~/components/Icons/IconHome.vue';
-import IconOuters from '~/components/Icons/IconOuters.vue';
+import IconKeyDown from "~/components/Icons/IconKeyDown.vue";
+import IconLinks from "~/components/Icons/IconLinks.vue";
+import IconCalendar from "~/components/Icons/IconCalendar.vue";
+import IconProfile from "~/components/Icons/IconProfile.vue";
+import IconSubjects from "~/components/Icons/IconSubjects.vue";
+import IconTurmas from "~/components/Icons/IconTurmas.vue";
+import IconPerson from "~/components/Icons/IconPerson.vue";
+import IconHome from "~/components/Icons/IconHome.vue";
+import IconOuters from "~/components/Icons/IconOuters.vue";
+import IconAdd from "~/components/Icons/IconAdd.vue";
 </script>
 
 <template>
@@ -56,7 +57,6 @@ import IconOuters from '~/components/Icons/IconOuters.vue';
       </ul>
     </div>
     <div class="conteudo">
-      <slot name="search"></slot>
       <slot></slot>
     </div>
   </div>
@@ -146,6 +146,10 @@ import IconOuters from '~/components/Icons/IconOuters.vue';
   cursor: pointer;
 }
 
+.barra-menu:hover {
+  padding-left: 40px;
+  /* margin-left: 40px; */
+}
 .search {
   margin-top: 50px;
 }

@@ -1,6 +1,12 @@
+<script setup>
+import IconAdd from "~/components/Icons/IconAdd.vue";
+</script>
 <template>
   <div>
     <SeachBar />
+  </div>
+  <div>
+    <IconAdd/>
   </div>
   <div>
     <section class="content-usuario">
