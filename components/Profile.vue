@@ -9,8 +9,8 @@
   display: block;
   width: 200px;
   height: 150px;
-  margin-top: 2%;
-  margin-left: 41%;
+  margin-top: 3%;
+  margin-left: 42%;
 }
 
 .circlepf {
