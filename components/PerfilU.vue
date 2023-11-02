@@ -1,13 +1,16 @@
 <script setup>
 import IconAdd from "~/components/Icons/IconAdd.vue";
+import IconExit from "~/components/Icons/IconExit.vue";
+
 </script>
 <template>
   <div>
     <SeachBar />
   </div>
   <div>
-    <IconAdd/>
+    <IconAdd />
   </div>
+  
   <div>
     <section class="content-usuario">
       <div class="ctusu">
