@@ -35,7 +35,7 @@ import IconExit from "~/components/Icons/IconExit.vue";
 
 <style>
 .content-usuario {
-  margin-top: 60px;
+  margin-top: 0%;
   margin-left: 150px;
 }
 .ctusu {

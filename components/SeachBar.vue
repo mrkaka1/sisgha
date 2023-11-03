@@ -1,6 +1,17 @@
 <template v-slot:search>
   <div>
-    <div class="flex items-center">
+    <div class="form">
+      <form action="./">
+        <label class="label" for="pesquisar">Pesquisar</label>
+        <input
+          class="input"
+          type="text"
+          id="pesquisar"
+          placeholder="     Procure um professor... "
+        />
+      </form>
+    </div>
+    <!-- <div class="flex items-center">
       <form action="/search" class="max-w-[480px] w-full px-4 ml-20 mt-10">
         <div class="relative">
           <input
@@ -28,6 +39,31 @@
           </button>
         </div>
       </form>
-    </div>
+    </div> -->
   </div>
 </template>
+<style scoped>
+.form {
+  margin-left: 10%;
+}
+.label {
+display: block;
+width: 50px;
+font-size: 10px;
+font-weight: 600;
+background-color: white;  
+color: #C8DCCB;
+margin-top: 60px;
+margin-left: 20px;
+
+}
+.input {
+height: 40px;
+width: 400px;
+font-weight: 550;
+font-size: 0.75rem;
+border-radius: 8px;
+border: 2px solid #C8DCCB;
+color: #C8DCCB
+}
+</style>

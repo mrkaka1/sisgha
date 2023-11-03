@@ -1,14 +1,19 @@
 <script setup>
-import IconExit from '~/components/Icons/IconExit.vue';
+import IconExit from "~/components/Icons/IconExit.vue";
 </script>
 <template>
   <div>
     <IconExit class="ex" />
     <Menu />
-    <Profile />
-    <Information />
+    <section class="none">
+      <Profile />
+      <Information />
+    </section>
   </div>
 </template>
 <style scoped>
-
+.none {
+  display: none !important;
+}
 </style>
+
