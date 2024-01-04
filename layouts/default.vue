@@ -54,6 +54,10 @@ import IconAdd from "~/components/Icons/IconAdd.vue";
         <li>
           <IconOuters />
         </li>
+
+        <li>
+          <IconsIconGear />
+        </li>
       </ul>
     </div>
     <div class="conteudo">
@@ -93,8 +97,9 @@ import IconAdd from "~/components/Icons/IconAdd.vue";
   display: flex;
   height: 70px;
   margin: 0px 0px 1px 0px;
-  border-bottom: 0.2px solid #eeeeee;
-  box-shadow: 0px 0.1px 5px #d4d0d0;
+  border-bottom: 0.2px solid #FFFFFF;
+  /* box-shadow: 0px 0.1px 3px #39A048; */
+  box-shadow: 0px 0.1px 9px 1px rgba( 57, 160, 72, 0.19);
 }
 
 .heade .svgH {
@@ -130,14 +135,13 @@ import IconAdd from "~/components/Icons/IconAdd.vue";
 .barra-menu {
   align-items: center;
   justify-content: center;
-
   background-color: #39a048;
 }
 
 .barra-menu .svg-mn {
   padding: 0px;
   margin: 15px;
-  margin-top: 65px;
+  margin-top: 35px;
   margin-bottom: 25px;
   width: 25px;
   height: 25px;
@@ -146,11 +150,5 @@ import IconAdd from "~/components/Icons/IconAdd.vue";
   cursor: pointer;
 }
 
-.barra-menu:hover {
-  padding-left: 40px;
-  /* margin-left: 40px; */
-}
-.search {
-  margin-top: 50px;
-}
+
 </style>

@@ -1,17 +1,31 @@
-<script setup>
+<script setup lang="ts">
+
 import IconAdd from "~/components/Icons/IconAdd.vue";
-import IconExit from "~/components/Icons/IconExit.vue";
+import { ref } from "vue";
+import ModalNewUser from "./ModalNewUser.vue";
+
+const show = ref(false);
+
+const openConfirm = () => show.value = true;
+
+const closeConfirm = () => show.value = false;
+
 
 </script>
+
+
 <template>
   <div>
     <SeachBar />
   </div>
   <div>
-    <IconAdd />
+    <IconAdd class="iconadd" @click="openConfirm"/>
+    <Teleport to="#modal">
+        <ModalNewUser v-if="show" @close="closeConfirm"></ModalNewUser>
+      </Teleport>
   </div>
   
-  <div>
+  <div class="contentUsu">
     <section class="content-usuario">
       <div class="ctusu">
         <NuxtLink
@@ -20,8 +34,8 @@ import IconExit from "~/components/Icons/IconExit.vue";
           :to="`/usuarios/${i}`"
           class="usuario"
         >
-          <div class="circle">
-            <img src="../imgs/Photo.png" alt="" />
+          <div class="photoProfile">
+            <IconsIconPersonProfile />
           </div>
           <h4 class="nomes">Danilo Escudero</h4>
           <h6 class="cargo">Professor</h6>
@@ -34,13 +48,14 @@ import IconExit from "~/components/Icons/IconExit.vue";
 <script setup></script>
 
 <style>
+
 .content-usuario {
-  margin-top: 0%;
   margin-left: 150px;
 }
 .ctusu {
   grid-column: 1/3;
   grid-row: 1;
+  margin-top: 50px;
 }
 
 .label {
@@ -54,7 +69,10 @@ import IconExit from "~/components/Icons/IconExit.vue";
 }
 
 .usuario {
-  grid-row: 1;
+  display: flex;
+  flex-direction: column; /* Alinha os itens em coluna (um abaixo do outro) */
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
   margin-top: 50px;
   width: 140px;
   height: 190px;
@@ -64,8 +82,17 @@ import IconExit from "~/components/Icons/IconExit.vue";
   justify-content: center;
 }
 
-.circle {
-  margin: 17px;
+.photoProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #c8dccb;
+  border-radius: 8px;
+  background-color: #F0F0F0;
+  justify-content: center;
+  align-content: center;
 }
 
 .ctusu {
@@ -74,21 +101,25 @@ import IconExit from "~/components/Icons/IconExit.vue";
 }
 
 .nomes {
+  margin-top: 10px;
   color: #000;
   font-size: 0.85rem;
-  margin-left: 15px;
   font-weight: 700;
 }
 
 .cargo {
-  margin-left: 30px;
-  font-weight: 450;
+  font-weight: 350;
   color: #c8dccb;
+  font-size: 14px;
 }
 
 .svgvt {
   width: 12px;
   height: 12px;
+  position: relative;
+}
+
+.iconadd {
   position: relative;
 }
 </style>

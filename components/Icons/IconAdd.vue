@@ -21,7 +21,7 @@
 .button_add {
     width: 50px;
     margin-left: 92%;
-    margin-top: -2%;
+    margin-top: -3%;
     cursor: pointer;
 }
 </style>

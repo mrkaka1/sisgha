@@ -2,7 +2,7 @@
   <div>
     <svg
       class="svg-mn"
-      width="160"
+      width="150"
       height="153"
       viewBox="0 0 160 153"
       fill="none"
