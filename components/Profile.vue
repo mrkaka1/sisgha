@@ -29,7 +29,7 @@
   width: 400px;
   height: 200px;
   margin-top: -200px;
-  margin-left: 205px;
+  margin-left: 20px;
   background-color: blue;
   z-index: 5;
   border-radius: 8px 8px 0px 0px;

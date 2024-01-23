@@ -1,5 +1,15 @@
+<script setup>
+import { ref } from "vue";
+
+const props = defineProps(["nome"]);
+const barraAtiva = ref(false);
+
+const toggleAtivo = () => {
+  barraAtiva.value = !barraAtiva.value;
+};
+</script>
 <template>
-  <div>
+  <div class="icone">
     <svg
       class="svg-mn"
       width="168"
@@ -29,5 +39,27 @@
         stroke-width="25"
       />
     </svg>
+    <span  class="nome">{{ nome }}</span>
   </div>
 </template>
+
+<style scoped>
+.icone {
+  display: flex; /* Coloca o SVG e o nome em uma coluna */
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+
+
+.nome {
+  margin-left: 50px;  /* Adicione margem à esquerda para separação do ícone */
+  font-size: 16px;
+  text-align: center; /* Centraliza o texto */
+}
+
+.ativo {
+  color: white;
+}
+</style>

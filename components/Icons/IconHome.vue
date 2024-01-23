@@ -1,15 +1,60 @@
+<script setup>
+import { ref } from "vue";
+
+const props = defineProps(["nome"]);
+const barraAtiva = ref(false);
+
+const toggleAtivo = () => {
+  barraAtiva.value = !barraAtiva.value;
+};
+</script>
 <template>
-  <svg
-    width="0"
-    height="0"
-    viewBox="0 0 21 20"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M2.39941 8.22222V18.0436C2.39941 18.2957 2.60374 18.5 2.85579 18.5H7.3625C7.61455 18.5 7.81888 18.2957 7.81888 18.0436V13.4228C7.81888 13.1708 8.0232 12.9664 8.27525 12.9664H12.7249C12.977 12.9664 13.1813 13.1708 13.1813 13.4228V18.0436C13.1813 18.2957 13.3856 18.5 13.6377 18.5H18.1444C18.3964 18.5 18.6008 18.2957 18.6008 18.0436V8.22222C18.6008 8.08385 18.538 7.95296 18.4301 7.86634L10.7858 1.72937C10.6189 1.59538 10.3813 1.59538 10.2144 1.72937L2.57008 7.86634C2.46219 7.95296 2.39941 8.08385 2.39941 8.22222Z"
-      stroke="white"
-      stroke-width="2.85235"
-    />
-  </svg>
+  <div class="icone" >
+    <svg
+      class="home"
+      width="26"
+      height="60"
+      viewBox="0 0 168 174"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M13 70.9183V157C13 159.209 14.7909 161 17 161H56.5C58.7091 161 60.5 159.209 60.5 157V116.5C60.5 114.291 62.2909 112.5 64.5 112.5H103.5C105.709 112.5 107.5 114.291 107.5 116.5V157C107.5 159.209 109.291 161 111.5 161H151C153.209 161 155 159.209 155 157V70.9183C155 69.7055 154.45 68.5583 153.504 67.7991L86.5041 14.0104C85.0413 12.8359 82.9587 12.8359 81.4959 14.0104L14.4959 67.7991C13.5502 68.5583 13 69.7056 13 70.9183Z"
+        stroke="white"
+        stroke-width="25"
+      />
+    </svg>
+
+    <span  class="nome">{{ nome }}</span>
+  </div>
 </template>
+
+<style scoped>
+.home {
+  margin-left: 13px;
+  cursor: pointer;
+}
+
+.icone {
+  display: flex; /* Coloca o SVG e o nome em uma coluna */
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.svg-mn {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.nome {
+  margin-left: 50px;  /* Adicione margem à esquerda para separação do ícone */
+  font-size: 16px;
+  text-align: center; /* Centraliza o texto */
+}
+
+.ativo {
+  color: white;
+}
+</style>

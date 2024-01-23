@@ -1,15 +1,16 @@
 <script setup lang="ts">
 
 import IconAdd from "~/components/Icons/IconAdd.vue";
-import { ref } from "vue";
+import { ref } from 'vue';
 import ModalNewUser from "./ModalNewUser.vue";
+
 
 const show = ref(false);
 
 const openConfirm = () => show.value = true;
 
-const closeConfirm = () => show.value = false;
 
+const closeConfirm = () => show.value = false;
 
 </script>
 
@@ -21,7 +22,7 @@ const closeConfirm = () => show.value = false;
   <div>
     <IconAdd class="iconadd" @click="openConfirm"/>
     <Teleport to="#modal">
-        <ModalNewUser v-if="show" @close="closeConfirm"></ModalNewUser>
+        <ModalNewUser class="transition" v-if="show" @close="closeConfirm" ></ModalNewUser>
       </Teleport>
   </div>
   
@@ -37,7 +38,7 @@ const closeConfirm = () => show.value = false;
           <div class="photoProfile">
             <IconsIconPersonProfile />
           </div>
-          <h4 class="nomes">Danilo Escudero</h4>
+          <h4 class="nomesP" >Danilo Escudero</h4>
           <h6 class="cargo">Professor</h6>
         </NuxtLink>
       </div>
@@ -45,7 +46,6 @@ const closeConfirm = () => show.value = false;
   </div>
 </template>
 
-<script setup></script>
 
 <style>
 
@@ -100,7 +100,7 @@ const closeConfirm = () => show.value = false;
   gap: 70px;
 }
 
-.nomes {
+.nomesP {
   margin-top: 10px;
   color: #000;
   font-size: 0.85rem;
@@ -122,4 +122,7 @@ const closeConfirm = () => show.value = false;
 .iconadd {
   position: relative;
 }
+
+
+
 </style>

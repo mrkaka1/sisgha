@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from "vue";
 import IconKeyDown from "~/components/Icons/IconKeyDown.vue";
 import IconLinks from "~/components/Icons/IconLinks.vue";
 import IconCalendar from "~/components/Icons/IconCalendar.vue";
@@ -9,15 +10,25 @@ import IconPerson from "~/components/Icons/IconPerson.vue";
 import IconHome from "~/components/Icons/IconHome.vue";
 import IconOuters from "~/components/Icons/IconOuters.vue";
 import IconAdd from "~/components/Icons/IconAdd.vue";
+
+const isBarraAtiva = ref(false);
+const isNomesVisiveis = ref(false);
+
+const toggleBarra = () => {
+  isBarraAtiva.value = !isBarraAtiva.value;
+  isNomesVisiveis.value = isBarraAtiva.value;
+};
+
+
 </script>
 
 <template>
-  <div class="layout">
+  <div class="layout" >
     <header class="heade">
       <IconPerson class="svgH" />
 
       <ul class="ulH">
-        <li class="nome">Danilo Escudero</li>
+        <li class="Names">Danilo Escudero</li>
 
         <p class="p">
           DAPE
@@ -27,37 +38,38 @@ import IconAdd from "~/components/Icons/IconAdd.vue";
       </ul>
     </header>
 
-    <div class="barra-menu">
-      <ul>
+    <div class="barra-menu" @click="toggleBarra" :class="{ barraAtiva: isBarraAtiva }">
+      <ul :class="{ barraAtiva: isBarraAtiva }">
         <li>
-          <IconHome class="svg-mn" />
+          <IconHome :nome="isNomesVisiveis ? 'Home' : ''" />
         </li>
 
         <li>
-          <IconTurmas />
+          <IconTurmas :nome="isNomesVisiveis ? 'Turmas' : ''" />
         </li>
 
         <li>
-          <IconSubjects />
+          <IconSubjects :nome="isNomesVisiveis ? 'Subjects' : ''" />
         </li>
 
         <li>
-          <IconProfile />
+          <IconProfile :nome="isNomesVisiveis ? 'Profile' : ''" />
         </li>
         <li>
-          <IconLinks />
-        </li>
-        <li>
-          <IconCalendar />
+          <IconLinks :nome="isNomesVisiveis ? 'Links' : ''" />
         </li>
 
         <li>
-          <IconOuters />
+          <IconCalendar :nome="isNomesVisiveis ? 'Calendar' : ''" />
         </li>
 
         <li>
-          <IconsIconGear />
+          <IconOuters :nome="isNomesVisiveis ? 'Outers' : ''" />
         </li>
+
+       <li>
+        <IconsIconGear :nome="isNomesVisiveis ? 'Gear' : ''"/>
+       </li>
       </ul>
     </div>
     <div class="conteudo">
@@ -79,10 +91,7 @@ import IconAdd from "~/components/Icons/IconAdd.vue";
   grid-column: 1/-1;
 }
 
-.barra-menu {
-  grid-row: 2 / 3;
-  grid-column: 1 / 2;
-}
+
 
 .conteudo {
   grid-row: 2/3;
@@ -97,9 +106,9 @@ import IconAdd from "~/components/Icons/IconAdd.vue";
   display: flex;
   height: 70px;
   margin: 0px 0px 1px 0px;
-  border-bottom: 0.2px solid #FFFFFF;
+  border-bottom: 0.2px solid #ffffff;
   /* box-shadow: 0px 0.1px 3px #39A048; */
-  box-shadow: 0px 0.1px 9px 1px rgba( 57, 160, 72, 0.19);
+  box-shadow: 0px 0.1px 9px 1px rgba(57, 160, 72, 0.19);
 }
 
 .heade .svgH {
@@ -115,7 +124,7 @@ import IconAdd from "~/components/Icons/IconAdd.vue";
   padding: 0px;
 }
 
-.heade .nome {
+.heade .Names {
   display: block;
   font-weight: bold;
   margin: 0px;
@@ -149,6 +158,5 @@ import IconAdd from "~/components/Icons/IconAdd.vue";
   justify-content: center;
   cursor: pointer;
 }
-
 
 </style>
